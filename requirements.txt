@@ -12,6 +12,7 @@ Pygments==2.19.2
 pytest==9.0.2
 pytest-base-url==2.1.0
 pytest-playwright==0.7.2
+pytest-timeout==2.4.0
 python-slugify==8.0.4
 requests==2.33.0
 text-unidecode==1.3

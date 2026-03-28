@@ -41,3 +41,11 @@ def checkout_page(cart_page: Page):
     cart_page.get_by_role("button", name="Checkout").click()
     cart_page.wait_for_url(f"{BASE_URL}/checkout-step-one.html")
     yield cart_page
+
+@pytest.fixture(scope="function", autouse=True)
+def trace_on_failure(page: Page, request):
+    """Automatically capture trace on test failure"""
+    page.context.tracing.start(screenshots=True, snapshots=True, sources=True)
+    yield
+    trace_path = f"traces/{request.node.name}.zip"
+    page.context.tracing.stop(path=trace_path)
