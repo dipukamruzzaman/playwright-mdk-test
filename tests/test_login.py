@@ -12,7 +12,8 @@ def test_login_page_loads(page: Page):
 def test_valid_login(logged_in_page: Page):
     """Login with valid credentials"""
     expect(logged_in_page).to_have_url(f"{BASE_URL}/inventory.html")
-    expect(logged_in_page.locator(".title")).to_contain_text("Products")
+    expect(logged_in_page.locator(".title")).to_contain_text("Wrong Text")
+    """expect(logged_in_page.locator(".title")).to_contain_text("Products")"""
 
 
 def test_invalid_login(page: Page):
