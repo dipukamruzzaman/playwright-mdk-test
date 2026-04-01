@@ -80,3 +80,26 @@ def checkout_page_obj(logged_in_page: Page):
     cart = CartPage(logged_in_page)
     cart.proceed_to_checkout()
     return CheckoutPage(logged_in_page)
+
+@pytest.fixture(scope="session")
+def auth_state():
+    """Session-scoped fixture that provides saved auth state path"""
+    return "auth/auth_state.json"
+
+
+@pytest.fixture
+def authenticated_page(context, auth_state):
+    """Page with pre-loaded auth state — skips login entirely"""
+    context.storage_state(path=auth_state)
+    page = context.new_page()
+    page.goto("https://www.saucedemo.com/inventory.html")
+    yield page
+
+@pytest.fixture
+def authenticated_page(browser, auth_state):
+    """Page with pre-loaded auth state — skips login entirely"""
+    context = browser.new_context(storage_state=auth_state)
+    page = context.new_page()
+    page.goto("https://www.saucedemo.com/inventory.html")
+    yield page
+    context.close()

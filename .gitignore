@@ -28,3 +28,4 @@ allure-report/
 .DS_Store
 Thumbs.db
 traces/
+auth/auth_state.json
