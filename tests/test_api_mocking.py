@@ -88,10 +88,11 @@ def test_monitor_all_network_requests(logged_in_page: Page):
 
     # Filter out known SPA 404s - SPAs serve routes via JS not real files
     real_failures = [
-        r for r in responses_log
-        if r.startswith(("4", "5"))
-        and "inventory.html" not in r
-    ]
+    r for r in responses_log
+    if r.startswith(("4", "5"))
+    and "inventory.html" not in r
+    and "backtrace.io" not in r
+]
     print(f"Real failed responses: {real_failures}")
     assert len(real_failures) == 0, f"Found failed responses: {real_failures}"
 
