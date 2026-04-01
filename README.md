@@ -1,5 +1,7 @@
 # Playwright MDK Tests 🎭
 
+![CI](https://github.com/dipukamruzzaman/playwright-mdk-test/actions/workflows/playwright.yml/badge.svg) 🎭
+
 An end-to-end test automation framework built with **Python + Playwright**,
 implementing industry best practices including Page Object Model,
 cross-browser testing, API mocking, and Allure reporting.
