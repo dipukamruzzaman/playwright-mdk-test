@@ -151,5 +151,5 @@ parallel execution across 3 browser engines
 
 ## 👤 Author
 
-Your Name — [LinkedIn](www.linkedin.com/in/md-kamruzzaman-54507149) |
-[GitHub](https://github.com/dipukamruzzaman)
+## 👤 Author
+Dipu Kamruzzaman — [LinkedIn](https://www.linkedin.com/in/md-kamruzzaman-54507149) | [GitHub](https://github.com/dipukamruzzaman)
